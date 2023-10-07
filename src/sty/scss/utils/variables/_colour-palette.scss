@@ -1,0 +1,96 @@
+@use 'sass:map';
+@use 'colour-base' as *;
+@use 'colour-generated' as *;
+@use '../functions/colour' as *;
+
+
+$disabled-element-opacity: 0.33;
+$shadow-opacity: 0.2;
+$input-background-opacity-amount: 0.04;
+$hover-background-opacity-amount: 0.05;
+$active-background-opacity-amount: 0.08;
+$muted-text-opacity-amount: 0.6;
+$inactive-text-opacity-amount: 0.75;
+
+
+$colour-transparent: transparent;
+
+$colour-x-light: $colour-core-white;
+$colour-light: make($colour-neutral-cool, $colour-core-white, 0, 0, 96);
+$colour-mid-x-light: make($colour-neutral-cool, $colour-core-white, 0, 0, 87.1);
+$colour-mid-light: make($colour-neutral-cool, $colour-core-white, 0, 0, 81.2);
+$colour-mid: make($colour-neutral-cool, $colour-core-white, 0, 0, 50);
+$colour-mid-dark: make($colour-neutral-cool, $colour-core-white, 0, 0, 25);
+$colour-dark: $colour-neutral-text;
+$colour-x-dark: $colour-core-black;
+$colour-input-shadow: make($colour-x-dark, $colour-transparent, 0, 0, 88);
+
+$colour-negative: $colour-red;
+$colour-caution: make($colour-core-orange, $colour-x-light, 5.854, 72.615, 0.225);
+$colour-positive: $colour-green;
+$colour-information: make($colour-blue, $colour-x-light, -2.577, 29.411, 0);
+$colour-paper: make($colour-neutral-cool, $colour-x-light, 0, 0, 94);
+$colour-negative-dark: make($colour-negative, $colour-x-dark, 0, 0, 19);
+$colour-positive-dark: make($colour-positive, $colour-x-dark, -0.1, 100, 12);
+
+
+$colour-link: make($colour-blue, $colour-x-light, -2.7, 100, 7.5);
+$colour-link-visited: make($colour-core-aubergine, $colour-x-light, -17.6, -3.18, 25.5);
+$colour-focus: make($colour-blue-light, $colour-x-light, 8.7, 100, 15);
+
+$colour-link-dark: make($colour-link, $colour-x-light, 0, -50, 33.2);
+$colour-link-visited-dark: make($colour-link-visited, $colour-x-light, 0, 4, 31);
+
+$colour-focus-positive: make($colour-positive-dark, $colour-x-dark, 0.3, 0, 62.2);
+$colour-focus-negative: make($colour-negative-dark, $colour-x-dark, 14, 100, 67);
+
+$colour-label-validated: make($colour-information, $colour-x-dark, -11.961, 100, 34.7);
+
+$colour-code-background: make($colour-x-dark, $colour-transparent, 0, 0, 97);
+$colour-code-background-dark: make($colour-x-light, $colour-transparent, 0, 0, 70);
+$colour-code-heading-background: make($colour-x-dark, $colour-transparent, 0, 0, 92);
+
+$colour-positive-background: make($colour-positive, $colour-x-light, -14, -40, 92.4);
+$colour-positive-background--hover: make($colour-positive-background, $colour-x-dark, 0, 9, 2.3);
+$colour-positive-background--focus: make($colour-positive-background, $colour-x-dark, 0, 4, 4);
+
+
+$colour-palette: (
+    'x-light': $colour-x-light,
+    'light': $colour-light,
+    'paper': $colour-paper,
+    'mid-x-light': $colour-mid-x-light,
+    'mid-light': $colour-mid-light,
+    'mid': $colour-mid,
+    'mid-dark': $colour-mid-dark,
+    'dark': $colour-dark,
+    'x-dark': $colour-x-dark,
+    'input-shadow': $colour-input-shadow,
+    'negative': $colour-negative,
+    'negative-dark': $colour-negative-dark,
+    'focus-negative': $colour-focus-negative,
+    'caution': $colour-caution,
+    'positive': $colour-positive,
+    'positive-dark': $colour-positive-dark,
+    'positive-background': $colour-positive-background,
+    'positive-background--hover': $colour-positive-background--hover,
+    'positive-background--focus': $colour-positive-background--focus,
+    'focus-positive': $colour-focus-positive,
+    'information': $colour-information,
+    'link': $colour-link,
+    'link-dark': $colour-link-dark,
+    'link-visited': $colour-link-visited,
+    'link-visited-dark': $colour-link-visited-dark,
+    'focus': $colour-focus,
+    'label-validated': $colour-label-validated,
+    'code-background': $colour-code-background,
+    'code-background-dark': $colour-code-background-dark,
+    'code-heading-background': $colour-code-heading-background,
+);
+
+
+:root {
+    @each $k, $v in $colour-palette {
+        --colour-#{$k}: #{$v};
+    }
+}

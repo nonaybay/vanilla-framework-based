@@ -1,0 +1,30 @@
+@use 'colour-base' as *;
+@use '../functions/colour' as *;
+
+
+$colour-red: $colour-red;
+$colour-green: $colour-green;
+$colour-blue: $colour-blue;
+
+$colour-red-light: make($colour-red, $colour-core-white, 5.851, 19.277, 22.322);
+$colour-blue-light: make($colour-blue, $colour-core-white, -9.24, 75.84, 25.3);
+$colour-green-light: make($colour-green, $colour-core-white, -0.2, -39.93, 26);
+
+$colour-core-aubergine-light: make($colour-core-aubergine, $colour-core-black, -6.7, 15.27, 5);
+$colour-core-aubergine-mid: make($colour-core-aubergine, $colour-core-black, -3.7, -15.1, 17);
+$colour-core-aubergine-dark: make($colour-core-aubergine, $colour-core-black, -2.5, 100, 72);
+
+
+$colour-palette-core: (
+    'orange': $colour-core-orange,
+    'red': $colour-red,
+    'green': $colour-green,
+    'blue': $colour-blue,
+    'red-light': $colour-red-light,
+    'green-light': $colour-green-light,
+    'blue-light': $colour-blue-light,
+    'aurbergine': $colour-core-aubergine,
+    'aurbergine-light': $colour-core-aubergine-light,
+    'aurbergine-mid': $colour-core-aubergine-mid,
+    'aurbergine-dark': $colour-core-aubergine-dark,
+);

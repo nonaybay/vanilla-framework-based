@@ -1,0 +1,17 @@
+@use 'sass:color';
+@use 'sass:math';
+@use 'math' as *;
+
+
+@function make($colour, $colour-base, $h, $s, $l) {
+    $colourh: math.div(color.hue($colour), 1deg);
+    $colours: math.div(color.saturation($colour), 1%);
+    $h: scale($colourh, $h, 0, 359);
+    $s: scale($colours, $s, 0, 100);
+    $l: ($l * 1%);
+
+    $colour: color.mix($colour-base, $colour, $l);
+    $colour: color.change($colour, $hue: $h, $saturation: $s);
+
+    @return $colour;
+}

@@ -1,0 +1,10 @@
+@use 'sass:math';
+
+
+@function scale($v, $w, $n, $x, $p: 100) {
+    $i: if(($w >= 0), ($x - $v), ($v - $n));
+    $s: math.div(($w * $i), $p);
+    $v: ($v + $s);
+
+    @return $v;
+}
